@@ -3,24 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎀 Hello Kitty • Dự Đoán Tài Xỉu Pro</title>
+    <title>TOOL TX LE MINH</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Link CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- ... (Giữ nguyên phần HTML body từ file gốc của bạn) ... -->
-    <!-- MÀN HÌNH ĐĂNG NHẬP -->
-    <div id="login-screen">...</div>
-    <!-- TOOL -->
-    <div id="tool-screen" style="display:none;">...</div>
 
-    <!-- Link JS -->
-    <script src="assets/avatar.js"></script>
-    <script src="js/config.js"></script>
+    <!-- MÀN HÌNH ĐĂNG NHẬP -->
+    <div id="login-screen">
+        <div class="login-box">
+            <h1 class="login-title">LE HOANG MINH</h1>
+            <p class="login-sub"><i class="fa-solid fa-lock"></i> Nhập Key</p>
+            <div class="login-avatar">
+                <div class="login-avatar-ring"></div>
+                <img id="loginAvatarImg" src="" alt="Avatar">
+                <div class="login-online-dot"></div>
+            </div>
+            <div class="login-input-group">
+                <i class="fa-solid fa-key icon-left"></i>
+                <input type="password" id="keyInput" placeholder="Nhập Key của bạn..." autocomplete="off" spellcheck="false">
+            </div>
+            <button class="login-btn" id="btnLogin" onclick="doLogin()">
+                <span class="login-spinner" id="loginSpinner"></span>
+                <span id="btnText"><i class="fa-solid fa-right-to-bracket"></i> ĐĂNG NHẬP</span>
+            </button>
+            <div class="login-error" id="loginError"></div>
+            <p class="login-footer">©TOOL•LÀM GIÀU KIẾM LÚA<span>MinhLe</span></p>
+        </div>
+    </div>
+
+    <!-- TOOL -->
+    <div id="tool-screen" style="display:none;">
+        <iframe id="gameFrame" src="about:blank" class="game-frame"></iframe>
+        <div id="app-content">
+            <div class="drag-group" id="drag-md5" style="top:78px; left:18px;">
+                <div class="predict-card" id="predict-card-md5">
+                    <div class="card-header">
+                        <span class="card-title">MD5</span>
+                        <button class="toggle-btn" data-target="predict-card-md5">−</button>
+                    </div>
+                    <div class="card-body">
+                        <span class="sid-value" id="sid-md5">#@hellokitty</span>
+                        <div class="tx-row">
+                            <div class="tx-circle tai" id="tai-md5">--%</div>
+                            <div class="tx-circle xiu" id="xiu-md5">--%</div>
+                        </div>
+                        <div class="conf-box" id="conf-md5"><span class="conf-level">--</span><span class="conf-num">0%</span></div>
+                        <div class="status-text" id="status-md5">Đang tải...</div>
+                    </div>
+                </div>
+            </div>
+            <div class="drag-group" id="drag-hu" style="top:78px; right:18px;">
+                <div class="predict-card" id="predict-card-hu">
+                    <div class="card-header">
+                        <span class="card-title">HŨ</span>
+                        <button class="toggle-btn" data-target="predict-card-hu">+</button>
+                    </div>
+                    <div class="card-body">
+                        <span class="sid-value" id="sid-hu">#@hellokitty</span>
+                        <div class="tx-row">
+                            <div class="tx-circle tai" id="tai-hu">--%</div>
+                            <div class="tx-circle xiu" id="xiu-hu">--%</div>
+                        </div>
+                        <div class="conf-box" id="conf-hu"><span class="conf-level">--</span><span class="conf-num">0%</span></div>
+                        <div class="status-text" id="status-hu">Đang tải...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/avatar.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/main.js"></script>
 </body>

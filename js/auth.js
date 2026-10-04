@@ -1,0 +1,13 @@
+(function() {
+    // ... (Giữ nguyên logic giải mã key của bạn) ...
+    var _a = [108, 101, 104, 111]; // ...
+    window.___verify = function(input) { ... };
+})();
+
+var loginAttempts = 0;
+var loginLocked = false;
+
+function doLogin() {
+    // ... (Giữ nguyên logic đăng nhập của bạn) ...
+}
+// ... (Giữ nguyên logic lắng nghe sự kiện Enter) ...

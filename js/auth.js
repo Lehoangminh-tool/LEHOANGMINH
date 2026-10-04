@@ -43,7 +43,24 @@ function doLogin() {
             keyEl.classList.add('shake');
             setTimeout(function() { keyEl.classList.remove('shake'); }, 500);
             keyEl.select();
-            if (loginAttempts >= 5) { /* ... logic khóa ... */ }
+            if (loginAttempts >= 5) { 
+                loginLocked = true;
+                errEl.textContent = '🚫 Sai quá nhiều! Thử lại sau 30 giây...';
+                btn.disabled = true;
+                var sec = 30;
+                var iv = setInterval(function() {
+                    sec--;
+                    errEl.textContent = '🚫 Thử lại sau ' + sec + 's...';
+                    if (sec <= 0) {
+                        clearInterval(iv);
+                        loginLocked = false;
+                        loginAttempts = 0;
+                        btn.disabled = false;
+                        errEl.textContent = '';
+                        btnText.innerHTML = '<i class="fa-solid fa-right-to-bracket"></i> ĐĂNG NHẬP';
+                    }
+                }, 1000);
+            }
         }
     }, 600);
 }
